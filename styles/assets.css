@@ -1,0 +1,102 @@
+
+
+.add_btn {
+  float: right;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.455);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.button {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    padding: 1.2em 1rem;
+    margin-bottom: 12px;
+    cursor: pointer;
+    gap: 0.4rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+    background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088) no-repeat;
+    background-size: 300%;
+    color: black;
+    border: none;
+    background-position: left center;
+    box-shadow: 0 30px 10px -20px rgba(0,0,0,.2);
+    transition: background .3s ease;
+    display: none;
+  }
+  
+  .button:hover {
+    background-size: 320%;
+    background-position: right center;
+  }
+
+
+  .basket_button {
+    align-items: center;
+    background-color: #0000005b;
+    text-shadow: #fc0 1px 0 10px;
+    border: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans",
+      Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    width: 95%;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    margin-top: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+      color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+  }
+  
+  .basket_button:hover,
+  .button-18:focus {
+    background-color: rgb(178, 0, 0);
+    color: #ffffff;
+  }
+  
+  .basket_button:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, 0.7);
+  }
+  
+  .basket_button:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+
+
+
+
+
+  @media (max-width: 850px){
+    .button{
+        display: unset;
+    }
+}

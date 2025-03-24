@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BestelloRando</title>
+
+    <link rel="shortcut icon" href="./Assets/icons/icons8-favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/basket.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/db.js"></script>
+    <script src="./script.js"></script>
+
+  </head>
+  <body onload="init()">
+    <header>
+      <h1>Best Fresh Burger In Town</h1>
+    </header>
+
+    <div id="main_container">
+        
+      <div id="content_container">
+
+        <div class="img_container">
+          <img src="./Assets/img/hamburger-1.jpg" alt="" />
+        </div>
+
+        <div class="logo_container">
+          <a href="#"><img class="logo" src="./Assets/logo/Logo2.png" alt="" /></a>
+        </div>
+
+        <div class="nav_container">
+          <a href="#render_dishes">Hauptgerichte</a>
+          <a href="#render_side_dishes">Beilagen</a>
+          <a href="#/">Soßen</a>
+          <a href="#/">Desserts</a>
+        </div>
+
+        <div class="container3">
+          <img src="./Assets/img/hamburger-2.jpg" alt="" />
+        </div>
+
+        <div class="container4">
+          <h2>Hauptgerichte</h2>
+        </div>
+
+
+        <div id="render_dishes"></div>
+
+
+        <div class="container3">
+          <img src="./Assets/img/hamburger-6.jpg" alt="" />
+        </div>
+
+        <div class="container4">
+          <h2>Beilagen</h2>
+        </div>
+
+
+        <div id="render_side_dishes"></div>
+        
+        <div class="button_container">
+          <button onclick="showDialog()" class="button">WARENKORB</button>
+        </div>
+        
+
+
+      </div>
+
+
+      <div id="basket">
+
+        <div class="basket_headline">
+          <h2>Warenkorb</h2>
+        </div>
+
+        <div class="sticky_content">
+
+          
+          <div id="render_basket_order" class="basket_order_section"></div>
+
+          <div id="sum_container" class="order_sum_container">
+            <span class="sum_row"><p>Zwischensumme:</p><p>xxx</p></span>
+            <span class="sum_row"><p>Lieferkosten:</p><p>xxx</p></span>
+            <span class="sum_row"><p>Gesamt:</p><p>xxx</p></span>
+          </div>
+
+
+          <div id="hidden_info_container" class="hidden_info">
+            <span>Wähle leckere Gerichte aus und füge sie deinem Warenkorb hinzu</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div id="body_overlay" class="overlay_style d_none">
+
+        
+        <div id="basket_dialog">
+          
+          <button onclick="closeDialog()" class="basket_button">WARENKORB</button>
+
+          <div id="dialog_content">
+
+            <div id="dialog_basket_content">
+            <p class="dialog_box_headline">Menü Name</p>
+            <div class="dialog_menu">
+            <button onclick="decreaseAmount()" class="minus_btn">
+            <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
+            </button>
+            <p>1x</p>
+            <button onclick="increaseAmount()" class="plus_btn">
+            <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
+            </button>
+            <p>Preis €</p>
+            <button onclick="deleteFromBasket()" class="delete_btn">
+            <img src="./Assets/icons/icons8-müll-white.png" alt="">
+            </button>
+            </div>
+            </div>
+
+            
+          </div>
+        
+            
+
+        </div>
+      </div>
+      
+    </div>
+
+    <footer>
+      Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+
+
+
+
+
+@media (max-width: 850px){
+#basket{
+    display: none;
+}
+
+#basket_button{
+    display: unset;
+}
+}
