@@ -17,57 +17,77 @@ function renderSideDishes() {
   }
 }
 
-// Warenkörbe rendern:
+// Warenkorb rendern:
 function renderBasket() {
   document.getElementById("render_basket_order").innerHTML = "";
-  document.getElementById("basket_dialog").innerHTML = "";
 
-  for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
-    document.getElementById("render_basket_order").innerHTML += getBasket(basketIndex);
-    // document.getElementById("basket_dialog").innerHTML += getDialogBasket(basketIndex);
-  }
-}
-
-
-// TEST:
-function renderTestBasket() {
-  document.getElementById("render_basket_order").innerHTML = "";
-
-  
   for (let x = 0; x < dishes.length; x++) {
     if (dishes[x].amount > 0) {
-      document.getElementById("render_basket_order").innerHTML += getTestBasket(x);
+      document.getElementById("render_basket_order").innerHTML += getBasket(x);
+      // document.getElementById("basket_dialog").innerHTML += getDialogBasket(basketIndex);
+
     }
+    getSum();
   }
 }
 
 
+
+// Gesamtsumme Warenkorb:
+function getSum(){
+  let sum = 0;
+for (let i = 0; i < dishes.length; i++) {
+  if (dishes[i].amount > 0) {
+    sum += dishes[i].newprice;
+  }
+}
+
+document.getElementById("sum_container").innerHTML = `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
+            <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
+            <span class="sum_row"><p>Gesamt:</p><p>€</p></span>
+            `;;
+
+console.log(sum.toFixed(2));
+}
+
+
+
+
+// Gericht hinzufügen:
 function addMenu(dishesIndex) {
-  dishes[dishesIndex].amount++
+  dishes[dishesIndex].amount++;
   dishes[dishesIndex].newprice = dishes[dishesIndex].amount * dishes[dishesIndex].price;
 
-  renderTestBasket();
+  renderBasket();
 }
 
-
+// Anzahl reduzieren:
 function decreaseAmount(x) {
   if (dishes[x].amount > 1) {
-    dishes[x].amount--
+    dishes[x].amount--;
     dishes[x].newprice = dishes[x].amount * dishes[x].price;
   }
-  
-  renderTestBasket();
+
+  renderBasket();
+}
+
+// Anzahl erhöhen:
+function increaseAmount(x) {
+  dishes[x].amount++;
+  dishes[x].newprice = dishes[x].amount * dishes[x].price;
+
+  renderBasket();
+}
+
+// Gericht aus Warenkorb löschen:
+function deleteFromBasket(x) {
+  dishes[x].amount = 0;
+
+  renderBasket();
 }
 
 
-function increaseAmount(x) {
-  dishes[x].amount++
-  dishes[x].newprice = dishes[x].amount * dishes[x].price;
-   
-  renderTestBasket();
-  }
-  
-  
+
 
 
 
@@ -93,8 +113,6 @@ function renderInfoField() {
   }
 }
 
-
-
 function showDialog() {
   document.getElementById("body_overlay").classList.remove("d_none");
   document.getElementById("basket_overlay").classList.remove("d_none");
@@ -103,32 +121,3 @@ function showDialog() {
 function closeDialog() {
   document.getElementById("body_overlay").classList.add("d_none");
 }
-
-
-
-
-
-
-
-// function addMenu(dishesIndex) {
-//   let index = dishes.indexOf(dishes[dishesIndex]);
-//   console.log(index);
-  
-//   dishes[dishesIndex].amount++
-//   console.log(dishes);
-  
-
-//   if (basket == "" || index === -1) {
-//     basket.push(dishes[dishesIndex]);
-//     console.log("Wird neu hinzugefügt");
-//     console.log(basket);
-    
-//   } else {
-
-//     basket[index].amount++
-//     console.log("Amount wird erhöht");
-//     console.log(basket);
-//   }
-
-//   renderBasket();
-// }

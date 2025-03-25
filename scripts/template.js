@@ -28,30 +28,9 @@ return `<div id="dishes_box" onclick="addMenu()">
 }
 
 
-function getBasket(basketIndex){
-    return `<div id="basket_order_content${[basketIndex]}" class="basket_order">
-              <p class="dishes_box_headline">${basket[basketIndex].name}</p>
-              <div class="order_options">
-              <button onclick="decreaseAmount(${[basketIndex]})" class="minus_btn">
-              <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
-              </button>
-              <p>${basket[basketIndex].amount}</p>
-              <button onclick="increaseAmount(${[basketIndex]})" class="plus_btn">
-              <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
-              </button>
-              <p>${basket[basketIndex].price.toFixed(2)} €</p>
-              <button onclick="deleteFromBasket(${[basketIndex]})" class="delete_btn">
-              <img src="./Assets/icons/icons8-müll-white.png" alt="">
-              </button>
-              </div>
-              </div>
-            `;
-}
-
-
 
 // TEST:
-function getTestBasket(x){
+function getBasket(x){
   return `<div id="basket_order_content${[x]}" class="basket_order">
             <p class="dishes_box_headline">${dishes[x].name}</p>
             <div class="order_options">
@@ -71,9 +50,12 @@ function getTestBasket(x){
           `;
 }
 
-
-
-
+function getSumField(){
+  return `<span class="sum_row"><p>Zwischensumme:</p><p>${sum} €</p></span>
+            <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
+            <span class="sum_row"><p>Gesamt:</p><p>€</p></span>
+            `;
+}
 
 // function getDialogBasket(basketIndex){
 //   return `<div id="basket_order_content${[basketIndex]}" class="basket_order">
