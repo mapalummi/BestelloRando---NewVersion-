@@ -19,16 +19,16 @@ function renderSideDishes() {
 
 // Warenkorb rendern:
 function renderBasket() {
-  document.getElementById("render_basket_order").innerHTML = "";
+  let basketField = document.getElementById("render_basket_order");
+  basketField.innerHTML = "";
 
   for (let x = 0; x < dishes.length; x++) {
     if (dishes[x].amount > 0) {
-      document.getElementById("render_basket_order").innerHTML += getBasket(x);
+      basketField.innerHTML += getBasket(x);
       // document.getElementById("basket_dialog").innerHTML += getDialogBasket(basketIndex);
-
     }
-    getSum();
   }
+    getSum(); 
 }
 
 
@@ -42,12 +42,7 @@ for (let i = 0; i < dishes.length; i++) {
   }
 }
 
-document.getElementById("sum_container").innerHTML = `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
-            <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
-            <span class="sum_row"><p>Gesamt:</p><p>€</p></span>
-            `;;
-
-console.log(sum.toFixed(2));
+document.getElementById("sum_container").innerHTML = getSumField(sum);
 }
 
 
@@ -59,6 +54,8 @@ function addMenu(dishesIndex) {
   dishes[dishesIndex].newprice = dishes[dishesIndex].amount * dishes[dishesIndex].price;
 
   renderBasket();
+  renderSumField();
+  renderInfoField()
 }
 
 // Anzahl reduzieren:
@@ -84,6 +81,8 @@ function deleteFromBasket(x) {
   dishes[x].amount = 0;
 
   renderBasket();
+  renderSumField();
+  renderInfoField()
 }
 
 
@@ -93,7 +92,7 @@ function deleteFromBasket(x) {
 
 
 
-function renderOrderSumField() {
+function renderSumField() {
   let hiddenSum = document.getElementById("render_basket_order").innerHTML;
 
   if (hiddenSum !== "") {
@@ -106,10 +105,10 @@ function renderOrderSumField() {
 function renderInfoField() {
   let hiddenInfo = document.getElementById("render_basket_order").innerHTML;
 
-  if (hiddenInfo !== "") {
-    document.getElementById("hidden_info_container").classList.add("d_none");
-  } else {
+  if (hiddenInfo == "") {
     document.getElementById("hidden_info_container").classList.remove("d_none");
+  } else {
+    document.getElementById("hidden_info_container").classList.add("d_none");
   }
 }
 
