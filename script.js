@@ -22,10 +22,13 @@ function renderBasket() {
   let basketField = document.getElementById("render_basket_order");
   basketField.innerHTML = "";
 
+  let dialogBasket = document.getElementById("dialog_content");
+  dialogBasket.innerHTML = "";
+
   for (let x = 0; x < dishes.length; x++) {
     if (dishes[x].amount > 0) {
       basketField.innerHTML += getBasket(x);
-      // document.getElementById("basket_dialog").innerHTML += getDialogBasket(basketIndex);
+      dialogBasket.innerHTML += getDialogBasket(x);
     }
   }
     getSum(); 
@@ -42,6 +45,7 @@ function getSum(){
     }
 
 document.getElementById("sum_container").innerHTML = getSumField(sum);
+document.getElementById("dialog_sum_content").innerHTML = getDialogSumField(sum);
 }
 
 // Gericht hinzufügen:
@@ -94,7 +98,15 @@ renderSumField()
 renderInfoField()
 }
 
+// Anpassen - Sum-Field soll raus:
+function deleteDialogBasket(){
+  for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
 
+    if (dishes[deleteIndex].amount > 0) {
+      dishes[deleteIndex].amount = 0;
+      }
+    }
+}
 
 
 

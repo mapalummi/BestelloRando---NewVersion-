@@ -82,11 +82,7 @@
           
           <div id="render_basket_order" class="basket_order_section"></div>
 
-          <div id="sum_container" class="order_sum_container">
-            <!-- <span class="sum_row"><p>Zwischensumme:</p><p>€</p></span>
-            <span class="sum_row"><p>Lieferkosten:</p><p>€</p></span>
-            <span class="sum_row"><p>Gesamt:</p><p>€</p></span> -->
-          </div>
+          <div id="sum_container" class="order_sum_container"></div>
 
 
           <div id="hidden_info_container" class="hidden_info">
@@ -100,38 +96,18 @@
 
       <div id="body_overlay" class="overlay_style d_none">
 
-        
         <div id="basket_dialog">
           
           <button onclick="closeDialog()" class="basket_button">WARENKORB</button>
 
-          <div id="dialog_content">
-
-            <div id="dialog_basket_content">
-            <p class="dialog_box_headline">Menü Name</p>
-            <div class="dialog_menu">
-            <button onclick="decreaseAmount()" class="minus_btn">
-            <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
-            </button>
-            <p>1x</p>
-            <button onclick="increaseAmount()" class="plus_btn">
-            <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
-            </button>
-            <p>Preis €</p>
-            <button onclick="deleteFromBasket()" class="delete_btn">
-            <img src="./Assets/icons/icons8-müll-white.png" alt="">
-            </button>
-            </div>
-            </div>
-
-            
-          </div>
-        
-            
-
+          <div id="dialog_content"></div>
+          <div id="dialog_sum_content" class="order_sum_container"></div>
         </div>
+
       </div>
       
+
+
     </div>
 
     <footer>
