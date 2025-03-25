@@ -53,7 +53,7 @@ function getBasket(x){
 function getSumField(sum){
   return `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
-            <span class="sum_row"><p>Gesamt:</p><p>€</p></span>
+            <span class="sum_row"><p>Gesamt:</p><p>${sum.toFixed(2)}€</p></span>
             `;
 }
 
