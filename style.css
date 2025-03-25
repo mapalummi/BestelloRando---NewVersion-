@@ -125,11 +125,6 @@ header h1 {
   justify-content: space-between;
 }
 
-/* #dishes_box:hover {
-  cursor: pointer;
-  background-color: rgba(255, 0, 0, 0.278);
-} */
-
 .dishes_box_headline {
   font-size: 20px;
   color: white;
@@ -288,10 +283,10 @@ header h1 {
 
 #basket_dialog {
   position: fixed;
-  left: 5%;
+  left: 3%;
   top: 20px;
   height: 95vh;
-  width: 500px;
+  width: 400px;
   background-color: rgb(50, 0, 0);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.597);
@@ -299,7 +294,6 @@ header h1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  
 }
 
 .dialog_list_content{
