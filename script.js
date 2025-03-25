@@ -2,7 +2,6 @@ function init() {
   renderInfoField();
   renderMainDishes();
   renderSideDishes();
-  
 }
 
 // Gerichte rendern:
@@ -30,27 +29,45 @@ function renderBasket() {
 }
 
 
+// TEST:
+function renderTestBasket() {
+  document.getElementById("render_basket_order").innerHTML = "";
+
+  
+  for (let x = 0; x < dishes.length; x++) {
+    if (dishes[x].amount > 0) {
+      document.getElementById("render_basket_order").innerHTML += getTestBasket(x);
+    }
+  }
+}
 
 
-
-
-
-// Menü hinzufügen zum Warenkorb
 function addMenu(dishesIndex) {
+  dishes[dishesIndex].amount++
+  dishes[dishesIndex].newprice = dishes[dishesIndex].amount * dishes[dishesIndex].price;
 
-     if (basket == "") {
-      basket.push(dishes[dishesIndex])
-      console.log('Wird zum 1. mal hinzugefügt');
-      console.log(basket);
-       
-   } else {
-      basket[dishesIndex].amount++
-       console.log('Amount wird erhöht');
-       console.log(basket);   
-   }
-     renderBasket();
-   }
- 
+  renderTestBasket();
+}
+
+
+function decreaseAmount(x) {
+  if (dishes[x].amount > 1) {
+    dishes[x].amount--
+    dishes[x].newprice = dishes[x].amount * dishes[x].price;
+  }
+  
+  renderTestBasket();
+}
+
+
+function increaseAmount(x) {
+  dishes[x].amount++
+  dishes[x].newprice = dishes[x].amount * dishes[x].price;
+   
+  renderTestBasket();
+  }
+  
+  
 
 
 
@@ -76,11 +93,42 @@ function renderInfoField() {
   }
 }
 
+
+
 function showDialog() {
   document.getElementById("body_overlay").classList.remove("d_none");
   document.getElementById("basket_overlay").classList.remove("d_none");
 }
 
-function closeDialog(){
+function closeDialog() {
   document.getElementById("body_overlay").classList.add("d_none");
 }
+
+
+
+
+
+
+
+// function addMenu(dishesIndex) {
+//   let index = dishes.indexOf(dishes[dishesIndex]);
+//   console.log(index);
+  
+//   dishes[dishesIndex].amount++
+//   console.log(dishes);
+  
+
+//   if (basket == "" || index === -1) {
+//     basket.push(dishes[dishesIndex]);
+//     console.log("Wird neu hinzugefügt");
+//     console.log(basket);
+    
+//   } else {
+
+//     basket[index].amount++
+//     console.log("Amount wird erhöht");
+//     console.log(basket);
+//   }
+
+//   renderBasket();
+// }
