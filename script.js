@@ -53,8 +53,9 @@ function addMenu(dishesIndex) {
   dishes[dishesIndex].amount++;
   dishes[dishesIndex].newprice = dishes[dishesIndex].amount * dishes[dishesIndex].price;
 
-  renderBasket();
-  renderSumField();
+  renderBasket()
+  renderSumField()
+  renderDialogSumField()
   renderInfoField()
 }
 
@@ -82,6 +83,7 @@ function deleteFromBasket(x) {
 
   renderBasket()
   renderSumField()
+  renderDialogSumField()
   renderInfoField()
 }
 
@@ -95,8 +97,10 @@ for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
   }
 renderBasket()
 renderSumField()
+renderDialogSumField()
 renderInfoField()
 }
+
 
 // Anpassen - Sum-Field soll raus:
 function deleteDialogBasket(){
@@ -106,9 +110,11 @@ function deleteDialogBasket(){
       dishes[deleteIndex].amount = 0;
       }
     }
+    renderBasket()
+    renderInfoField()
+    renderSumField()
+    renderDialogSumField()
 }
-
-
 
 function renderSumField() {
   let hiddenSum = document.getElementById("render_basket_order").innerHTML;
@@ -117,6 +123,16 @@ function renderSumField() {
     document.getElementById("sum_container").classList.remove("d_none");
   } else {
     document.getElementById("sum_container").classList.add("d_none");
+  }
+}
+
+function renderDialogSumField(){
+  let hiddenDialogSum = document.getElementById("dialog_content").innerHTML;
+
+  if (hiddenDialogSum !== "") {
+    document.getElementById("dialog_sum_content").classList.remove("d_none");
+  } else {
+    document.getElementById("dialog_sum_content").classList.add("d_none");
   }
 }
 

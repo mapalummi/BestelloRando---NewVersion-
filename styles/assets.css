@@ -13,6 +13,8 @@
   background-color: rgba(255, 0, 0, 0.278);
 }
 
+
+
 .button {
     width: 70%;
     display: flex;
@@ -42,6 +44,9 @@
   }
 
 
+
+
+
   .basket_button {
     align-items: center;
     background-color: #0000005b;
@@ -58,14 +63,11 @@
     font-weight: 600;
     justify-content: center;
     line-height: 20px;
-    width: 95%;
+    width: 100%;
     min-height: 40px;
     min-width: 0px;
     overflow: hidden;
     padding: 0px;
-    margin-top: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
     text-align: center;
     touch-action: manipulation;
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
@@ -96,12 +98,7 @@
 
 
 
-
-  
-  
-  
-  /* CSS */
-  .basket_button {
+  .basket_button2 {
     appearance: none;
     background-color: #FAFBFC;
     border: 1px solid rgba(27, 31, 35, 0.15);
@@ -127,37 +124,36 @@
     word-wrap: break-word;
   }
   
-  .basket_button:hover {
+  .basket_button2:hover {
     background-color: #F3F4F6;
     text-decoration: none;
     transition-duration: 0.1s;
   }
   
-  .basket_button:disabled {
+  .basket_button2:disabled {
     background-color: #FAFBFC;
     border-color: rgba(27, 31, 35, 0.15);
     color: #959DA5;
     cursor: default;
   }
   
-  .basket_button:active {
+  .basket_button2:active {
     background-color: #EDEFF2;
     box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
     transition: none 0s;
   }
   
-  .basket_button:focus {
+  .basket_button2:focus {
     outline: 1px transparent;
   }
   
-  .basket_button:before {
+  .basket_button2:before {
     display: none;
   }
   
-  .basket_button:-webkit-details-marker {
+  .basket_button2:-webkit-details-marker {
     display: none;
   }
-
 
 
   @media (max-width: 850px){

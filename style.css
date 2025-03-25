@@ -291,19 +291,26 @@ header h1 {
   left: 5%;
   top: 20px;
   height: 95vh;
-  width: 600px;
-  background-color: rgb(100, 0, 0);
-  color: black;
+  width: 500px;
+  background-color: rgb(50, 0, 0);
+  color: white;
   border: 1px solid rgba(255, 255, 255, 0.597);
   border-radius: 10px;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
+  
+}
+
+.dialog_list_content{
+  height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 #dialog_content{
-    width: 600px;
+    width: 90%;
 }
 
 .dialog_box_headline{
@@ -319,6 +326,16 @@ header h1 {
     align-items: center;
     gap: 40px;
 }
+
+.dialog_sum_container{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
 
 footer {
   width: 100%;

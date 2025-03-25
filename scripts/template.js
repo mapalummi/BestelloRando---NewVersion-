@@ -13,7 +13,6 @@ function getDishes(dishesIndex){
     `;
 }
 
-
 function getSideDishes(sideDishesindex){
 return `<div id="dishes_box" onclick="addMenu()">
             <div>
@@ -26,7 +25,6 @@ return `<div id="dishes_box" onclick="addMenu()">
           </div>
     `;
 }
-
 
 function getBasket(x){
   return `<div id="basket_order_content${[x]}" class="basket_order">
@@ -48,7 +46,6 @@ function getBasket(x){
           `;
 }
 
-
 function getDialogBasket(x){
   return `<div id="basket_order_content${[x]}" class="basket_order">
             <p class="dishes_box_headline">${dishes[x].name}</p>
@@ -69,12 +66,11 @@ function getDialogBasket(x){
           `;
 }
 
-
 function getSumField(sum){
   return `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
             <span class="sum_row"><p>Gesamt:</p><p>${(sum += 2).toFixed(2)}€</p></span>
-            <button onclick="deleteBasket()" class="basket_button" role="button">Bestellen</button>
+            <button onclick="deleteBasket()" class="basket_button2" role="button">Bestellen</button>
             `;
 }
 
@@ -82,6 +78,6 @@ function getDialogSumField(sum){
   return `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
             <span class="sum_row"><p>Gesamt:</p><p>${(sum += 2).toFixed(2)}€</p></span>
-            <button onclick="deleteDialogBasket()" class="basket_button" role="button">Bestellen</button>
+            <button onclick="deleteDialogBasket()" class="basket_button2" role="button">Bestellen</button>
             `;
 }
