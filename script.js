@@ -31,8 +31,6 @@ function renderBasket() {
     getSum(); 
 }
 
-
-
 // Gesamtsumme Warenkorb:
 function getSum(){
   let sum = 0;
@@ -45,9 +43,6 @@ function getSum(){
 
 document.getElementById("sum_container").innerHTML = getSumField(sum);
 }
-
-
-
 
 // Gericht hinzufügen:
 function addMenu(dishesIndex) {
@@ -86,8 +81,7 @@ function deleteFromBasket(x) {
   renderInfoField()
 }
 
-
-
+// Warenkorb komplett leeren:
 function deleteBasket(){
 for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
 

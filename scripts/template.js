@@ -1,13 +1,13 @@
 function getDishes(dishesIndex){
     return `
-        <div id="dishes_box" onclick="addMenu(${[dishesIndex]})">
+        <div id="dishes_box">
             <div>
               <p class="dishes_box_headline">${dishes[dishesIndex].name}</p>
               <p class="dishes_box_menu">${dishes[dishesIndex].info}</p>
               <p class="dishes_box_price">${dishes[dishesIndex].price.toFixed(2)} €</p>
             </div>
             <div class="add_btn">
-              <img class="basket_icon" src="./Assets/icons/icons8-warenkorb.png" alt="">
+              <img onclick="addMenu(${[dishesIndex]})" class="basket_icon" src="./Assets/icons/icons8-warenkorb.png" alt="">
             </div>
           </div>
     `;
@@ -28,8 +28,6 @@ return `<div id="dishes_box" onclick="addMenu()">
 }
 
 
-
-// TEST:
 function getBasket(x){
   return `<div id="basket_order_content${[x]}" class="basket_order">
             <p class="dishes_box_headline">${dishes[x].name}</p>

@@ -125,10 +125,10 @@ header h1 {
   justify-content: space-between;
 }
 
-#dishes_box:hover {
+/* #dishes_box:hover {
   cursor: pointer;
   background-color: rgba(255, 0, 0, 0.278);
-}
+} */
 
 .dishes_box_headline {
   font-size: 20px;
@@ -149,8 +149,6 @@ header h1 {
   color: red;
   padding-left: 16px;
 }
-
-
 
 .basket_icon {
   width: 24px;
@@ -321,8 +319,6 @@ header h1 {
     align-items: center;
     gap: 40px;
 }
-
-
 
 footer {
   width: 100%;
