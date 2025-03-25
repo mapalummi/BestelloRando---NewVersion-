@@ -36,11 +36,12 @@ function renderBasket() {
 // Gesamtsumme Warenkorb:
 function getSum(){
   let sum = 0;
-for (let i = 0; i < dishes.length; i++) {
-  if (dishes[i].amount > 0) {
-    sum += dishes[i].newprice;
-  }
-}
+
+    for (let i = 0; i < dishes.length; i++) {
+      if (dishes[i].amount > 0) {
+          sum += dishes[i].newprice;
+      }
+    }
 
 document.getElementById("sum_container").innerHTML = getSumField(sum);
 }
@@ -80,13 +81,24 @@ function increaseAmount(x) {
 function deleteFromBasket(x) {
   dishes[x].amount = 0;
 
-  renderBasket();
-  renderSumField();
+  renderBasket()
+  renderSumField()
   renderInfoField()
 }
 
 
 
+function deleteBasket(){
+for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
+
+  if (dishes[deleteIndex].amount > 0) {
+    dishes[deleteIndex].amount = 0;
+    }
+  }
+renderBasket()
+renderSumField()
+renderInfoField()
+}
 
 
 

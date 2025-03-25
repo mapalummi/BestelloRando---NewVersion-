@@ -54,7 +54,7 @@ function getSumField(sum){
   return `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
             <span class="sum_row"><p>Gesamt:</p><p>${(sum += 2).toFixed(2)}€</p></span>
-            <button class="basket_button" role="button">Bestellen</button>
+            <button onclick="deleteBasket()" class="basket_button" role="button">Bestellen</button>
             `;
 }
 
