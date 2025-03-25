@@ -102,7 +102,7 @@ renderInfoField()
 }
 
 
-// Anpassen - Sum-Field soll raus:
+// Funktioniert:
 function deleteDialogBasket(){
   for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
 
@@ -114,6 +114,7 @@ function deleteDialogBasket(){
     renderInfoField()
     renderSumField()
     renderDialogSumField()
+    closeDialog()
 }
 
 function renderSumField() {
