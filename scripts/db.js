@@ -47,19 +47,20 @@ let sideDishes = [
       {
           "name": "Pommes",
           "price": 7.90,
+          "newprice": 7.90,
           "amount": 0,
         },
         {
           "name": "Süßkartoffel-Pommes",
           "price": 8.90,
+          "newprice": 8.90,
           "amount": 0,
         },
         {
           "name": "Pommes Spezial",
           "info": "Zwiebeln",
           "price": 9.90,
+          "newprice": 9.90,
           "amount": 0,
         },
 ]
-
-let basket = []

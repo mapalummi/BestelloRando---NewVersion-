@@ -1,5 +1,5 @@
-function getDishes(dishesIndex){
-    return `
+function getDishes(dishesIndex) {
+  return `
         <div id="dishes_box">
             <div>
               <p class="dishes_box_headline">${dishes[dishesIndex].name}</p>
@@ -13,60 +13,86 @@ function getDishes(dishesIndex){
         `;
 }
 
-function getSideDishes(sideDishesindex){
-return `<div id="dishes_box" onclick="addMenu()">
+function getSideDishes(sideDishesindex) {
+  return `<div id="dishes_box">
             <div>
               <p class="dishes_box_headline">${sideDishes[sideDishesindex].name}</p>
               <p class="dishes_box_price">${sideDishes[sideDishesindex].price.toFixed(2)} €</p>
             </div>
             <div class="add_btn">
-              <img class="basket_icon" src="./Assets/icons/icons8-warenkorb.png" alt="">
+              <img onclick="addSideMenu(${[sideDishesindex]})" class="basket_icon" src="./Assets/icons/icons8-warenkorb.png" alt="">
             </div>
           </div>
         `;
 }
 
-function getBasket(x){
+function getBasket(x) {
   return `<div id="basket_order_content${[x]}" class="basket_order">
-            <p class="dishes_box_headline">${dishes[x].name}</p>
-            <div class="order_options">
-            <button onclick="decreaseAmount(${[x]})" class="minus_btn">
-            <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
-            </button>
-            <p>${dishes[x].amount}</p>
-            <button onclick="increaseAmount(${[x]})" class="plus_btn">
-            <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
-            </button>
-            <p>${dishes[x].newprice.toFixed(2)} €</p>
-            <button onclick="deleteFromBasket(${[x]})" class="delete_btn">
-            <img src="./Assets/icons/icons8-müll-white.png" alt="">
-            </button>
-            </div>
+                <p class="dishes_box_headline">${dishes[x].name}</p>
+              <div class="order_options">
+                <button onclick="decreaseAmount(${[x]})" class="minus_btn">
+                  <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
+                </button>
+                <p>${dishes[x].amount}</p>
+                  <button onclick="increaseAmount(${[x]})" class="plus_btn">
+                    <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
+                  </button>
+                <p>${dishes[x].newprice.toFixed(2)} €</p>
+                  <button onclick="deleteFromBasket(${[x]})" class="delete_btn">
+                    <img src="./Assets/icons/icons8-müll-white.png" alt="">
+                  </button>
+              </div>
             </div>
           `;
 }
 
-function getDialogBasket(x){
+// NEU - weiter anpassen!!
+// function getSecondBasket(i) {
+//   return `<div id="basket_second_order_content${[i]}" class="basket_second_order">
+//                 <p class="dishes_box_headline">${sideDishes[i].name}</p>
+//               <div class="order_options">
+//                 <button onclick="decreaseAmount(${[i]})" class="minus_btn">
+//                   <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
+//                 </button>
+//                 <p>${sideDishes[i].amount}</p>
+//                   <button onclick="increaseAmount(${[i]})" class="plus_btn">
+//                     <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
+//                   </button>
+//                 <p>${sideDishes[i].newprice.toFixed(2)} €</p>
+//                   <button onclick="deleteFromBasket(${[i]})" class="delete_btn">
+//                     <img src="./Assets/icons/icons8-müll-white.png" alt="">
+//                   </button>
+//               </div>
+//             </div>
+//           `;
+// }
+
+
+
+
+
+
+function getDialogBasket(x) {
   return `<div id="basket_order_content${[x]}" class="basket_order">
-            <p class="dishes_box_headline">${dishes[x].name}</p>
+              <p class="dishes_box_headline">${dishes[x].name}</p>
             <div class="order_options">
-            <button onclick="decreaseAmount(${[x]})" class="minus_btn">
-            <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
-            </button>
-            <p>${dishes[x].amount}</p>
-            <button onclick="increaseAmount(${[x]})" class="plus_btn">
-            <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
-            </button>
-            <p>${dishes[x].newprice.toFixed(2)} €</p>
-            <button onclick="deleteFromBasket(${[x]})" class="delete_btn">
-            <img src="./Assets/icons/icons8-müll-white.png" alt="">
-            </button>
-            </div>
+                <button onclick="decreaseAmount(${[x]})" class="minus_btn">
+                  <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
+                </button>
+              <p>${dishes[x].amount}</p>
+                <button onclick="increaseAmount(${[x]})" class="plus_btn">
+                  <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
+                </button>
+              <p>${dishes[x].newprice.toFixed(2)} €</p>
+                <button onclick="deleteFromBasket(${[x]})" class="delete_btn">
+                  <img src="./Assets/icons/icons8-müll-white.png" alt="">
+                </button>
+              </div>
             </div>
           `;
 }
 
-function getSumField(sum){
+function getSumField(sum) {
   return `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
             <span class="sum_row"><p>Gesamt:</p><p>${(sum += 2).toFixed(2)}€</p></span>
@@ -74,7 +100,7 @@ function getSumField(sum){
           `;
 }
 
-function getDialogSumField(sum){
+function getDialogSumField(sum) {
   return `<span class="sum_row"><p>Zwischensumme:</p><p>${sum.toFixed(2)} €</p></span>
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
             <span class="sum_row"><p>Gesamt:</p><p>${(sum += 2).toFixed(2)}€</p></span>
@@ -82,7 +108,7 @@ function getDialogSumField(sum){
           `;
 }
 
-function getButtonSum(sum){
+function getButtonSum(sum) {
   return `<p>Warenkorb (${(sum += 2).toFixed(2)} €)</p>
           `;
 }

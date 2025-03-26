@@ -32,6 +32,27 @@ function renderBasket() {
   getSum();
 }
 
+// Muss noch angepasst werden!!!
+// function renderSecondBasket() {
+//   let basketField = document.getElementById("render_second_basket_order");
+//   basketField.innerHTML = "";
+
+//   let dialogBasket = document.getElementById("dialog_content");
+//   dialogBasket.innerHTML = "";
+
+//   for (let i = 0; i < sideDishes.length; i++) {
+//     if (sideDishes[i].amount > 0) {
+//       basketField.innerHTML += getSecondBasket(i);
+//       dialogBasket.innerHTML += getSecondDialogBasket(i);
+//     }
+//   }
+//   getSum();
+// }
+
+
+
+
+
 function getSum() {
   let sum = 0;
 
@@ -58,9 +79,15 @@ function addMenu(dishesIndex) {
   hideBasketInfo();
   hideIndication();
   getSum();
-
   saveToLocalStorage()
 }
+
+// Beilagen adden:
+// function addSideMenu(sideDishesindex) {
+//   sideDishes[sideDishesindex].amount++;
+//   sideDishes[sideDishesindex].newprice = sideDishes[sideDishesindex].amount * sideDishes[sideDishesindex].price;
+// }
+
 
 function decreaseAmount(x) {
   if (dishes[x].amount > 1) {
@@ -70,7 +97,6 @@ function decreaseAmount(x) {
 
   renderBasket();
   renderSumField();
-
   saveToLocalStorage()
 }
 
@@ -80,7 +106,6 @@ function increaseAmount(x) {
 
   renderBasket();
   renderSumField();
-
   saveToLocalStorage()
 }
 
@@ -92,9 +117,7 @@ function deleteFromBasket(x) {
   renderDialogSumField();
   renderInfoField();
   getSum();
-
   resetButtonText()
-
   saveToLocalStorage()
 }
 
@@ -109,9 +132,7 @@ function deleteBasket() {
   renderDialogSumField();
   showBasketInfo();
   getSum();
-
   resetButtonText()
-
   saveToLocalStorage()
 }
 
@@ -127,7 +148,6 @@ function deleteDialogBasket() {
   renderDialogSumField();
   showIndication();
   getSum();
-
   saveToLocalStorage()
 }
 
