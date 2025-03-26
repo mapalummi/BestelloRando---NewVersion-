@@ -145,9 +145,8 @@
     display: none;
   }
 
-
   @media (max-width: 850px){
     .button{
         display: unset;
     }
-}
+  }

@@ -329,7 +329,7 @@ header h1 {
 }
 
 .dialog_list_content{
-  height: 100%;
+height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -380,6 +380,15 @@ footer a {
   display: none;
 }
 
+@media (max-width: 850px){
+  #basket_dialog {
+    left: 3%;
+    top: 4%;
+    height: 90vh;
+    width: 95%;
+  }
+}
+
 @media (max-width: 440px){
   header{
     justify-content: center;
@@ -427,8 +436,14 @@ footer a {
   .dishes_box_price {
     font-size: 14px;
   }
-}
 
+  #basket_dialog {
+    left: 4%;
+    top: 4%;
+    height: 90vh;
+    width: 90%;
+  }
+}
 
 
 @font-face {
