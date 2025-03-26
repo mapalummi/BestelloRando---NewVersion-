@@ -438,6 +438,13 @@ font-size: 12px;
   }
 }
 
+@media (max-width: 595px){
+  .dialog_info{
+    padding: 0px 12px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 440px){
   header{
     justify-content: center;
@@ -494,6 +501,13 @@ font-size: 12px;
   }
 }
 
+@media (max-width: 400px){
+  .dialog_info{
+    font-size: 14px;
+    padding: 0px 12px;
+    text-align: center;
+  }
+}
 
 @font-face {
   font-family: "poppins";

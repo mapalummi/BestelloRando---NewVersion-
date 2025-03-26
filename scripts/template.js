@@ -81,3 +81,8 @@ function getDialogSumField(sum){
             <button onclick="deleteDialogBasket()" class="basket_button2" role="button">Bestellen</button>
           `;
 }
+
+function getButtonSum(sum){
+  return `<p>Warenkorb (${(sum += 2).toFixed(2)} €)</p>
+          `;
+}

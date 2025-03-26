@@ -31,7 +31,7 @@ function renderBasket() {
       dialogBasket.innerHTML += getDialogBasket(x);
     }
   }
-    getSum(); 
+  getSum()
 }
 
 // Gesamtsumme Warenkorb:
@@ -46,6 +46,7 @@ function getSum(){
 
 document.getElementById("sum_container").innerHTML = getSumField(sum);
 document.getElementById("dialog_sum_content").innerHTML = getDialogSumField(sum);
+document.getElementById("main_button").innerHTML = getButtonSum(sum);
 }
 
 // Gericht hinzufügen:
@@ -60,6 +61,7 @@ function addMenu(dishesIndex) {
   hideDialogInfo()
   hideBasketInfo()
   hideIndication()
+  getSum()
 }
 
 // Anzahl reduzieren:
@@ -69,7 +71,8 @@ function decreaseAmount(x) {
     dishes[x].newprice = dishes[x].amount * dishes[x].price;
   }
 
-  renderBasket();
+  renderBasket()
+  renderSumField()
 }
 
 // Anzahl erhöhen:
@@ -77,7 +80,8 @@ function increaseAmount(x) {
   dishes[x].amount++;
   dishes[x].newprice = dishes[x].amount * dishes[x].price;
 
-  renderBasket();
+  renderBasket()
+  renderSumField()
 }
 
 // Gericht aus Warenkorb löschen:
@@ -88,6 +92,7 @@ function deleteFromBasket(x) {
   renderSumField()
   renderDialogSumField()
   renderInfoField()
+  getSum()
 }
 
 // Warenkorb komplett leeren:
@@ -101,8 +106,8 @@ for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
 renderBasket()
 renderSumField()
 renderDialogSumField()
-// renderInfoField()
 showBasketInfo()
+getSum()
 }
 
 
@@ -119,7 +124,7 @@ function deleteDialogBasket(){
     renderSumField()
     renderDialogSumField()
     showIndication()
-    // closeDialog()
+    getSum()
 }
 
 function renderSumField() {
@@ -154,7 +159,6 @@ function renderInfoField() {
 
 function showDialog() {
   document.getElementById("body_overlay").classList.remove("d_none");
-  // document.getElementById("basket_overlay").classList.remove("d_none");
 }
 
 function closeDialog() {

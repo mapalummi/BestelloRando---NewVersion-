@@ -41,6 +41,10 @@
     background-position: right center;
   }
 
+  .button p{
+    padding: 0;
+  }
+
   .basket_button {
     align-items: center;
     background-color: #0000005b;
