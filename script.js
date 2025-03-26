@@ -4,7 +4,6 @@ function init() {
   renderSideDishes();
 }
 
-// Gerichte rendern:
 function renderMainDishes() {
   for (let dishesIndex = 0; dishesIndex < dishes.length; dishesIndex++) {
     document.getElementById("render_dishes").innerHTML += getDishes(dishesIndex);
@@ -17,7 +16,6 @@ function renderSideDishes() {
   }
 }
 
-// Warenkorb rendern:
 function renderBasket() {
   let basketField = document.getElementById("render_basket_order");
   basketField.innerHTML = "";
@@ -31,100 +29,90 @@ function renderBasket() {
       dialogBasket.innerHTML += getDialogBasket(x);
     }
   }
-  getSum()
+  getSum();
 }
 
-// Gesamtsumme Warenkorb:
-function getSum(){
+function getSum() {
   let sum = 0;
 
-    for (let i = 0; i < dishes.length; i++) {
-      if (dishes[i].amount > 0) {
-          sum += dishes[i].newprice;
-      }
+  for (let i = 0; i < dishes.length; i++) {
+    if (dishes[i].amount > 0) {
+      sum += dishes[i].newprice;
     }
+  }
 
-document.getElementById("sum_container").innerHTML = getSumField(sum);
-document.getElementById("dialog_sum_content").innerHTML = getDialogSumField(sum);
-document.getElementById("main_button").innerHTML = getButtonSum(sum);
+  document.getElementById("sum_container").innerHTML = getSumField(sum);
+  document.getElementById("dialog_sum_content").innerHTML = getDialogSumField(sum);
+  document.getElementById("main_button").innerHTML = getButtonSum(sum);
 }
 
-// Gericht hinzufügen:
 function addMenu(dishesIndex) {
   dishes[dishesIndex].amount++;
   dishes[dishesIndex].newprice = dishes[dishesIndex].amount * dishes[dishesIndex].price;
 
-  renderBasket()
-  renderSumField()
-  renderDialogSumField()
-  renderInfoField()
-  hideDialogInfo()
-  hideBasketInfo()
-  hideIndication()
-  getSum()
+  renderBasket();
+  renderSumField();
+  renderDialogSumField();
+  renderInfoField();
+  hideDialogInfo();
+  hideBasketInfo();
+  hideIndication();
+  getSum();
 }
 
-// Anzahl reduzieren:
 function decreaseAmount(x) {
   if (dishes[x].amount > 1) {
     dishes[x].amount--;
     dishes[x].newprice = dishes[x].amount * dishes[x].price;
   }
 
-  renderBasket()
-  renderSumField()
+  renderBasket();
+  renderSumField();
 }
 
-// Anzahl erhöhen:
 function increaseAmount(x) {
   dishes[x].amount++;
   dishes[x].newprice = dishes[x].amount * dishes[x].price;
 
-  renderBasket()
-  renderSumField()
+  renderBasket();
+  renderSumField();
 }
 
-// Gericht aus Warenkorb löschen:
 function deleteFromBasket(x) {
   dishes[x].amount = 0;
 
-  renderBasket()
-  renderSumField()
-  renderDialogSumField()
-  renderInfoField()
-  getSum()
+  renderBasket();
+  renderSumField();
+  renderDialogSumField();
+  renderInfoField();
+  getSum();
 }
 
-// Warenkorb komplett leeren:
-function deleteBasket(){
-for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
-
-  if (dishes[deleteIndex].amount > 0) {
-    dishes[deleteIndex].amount = 0;
-    }
-  }
-renderBasket()
-renderSumField()
-renderDialogSumField()
-showBasketInfo()
-getSum()
-}
-
-
-// Funktioniert:
-function deleteDialogBasket(){
+function deleteBasket() {
   for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
-
     if (dishes[deleteIndex].amount > 0) {
       dishes[deleteIndex].amount = 0;
-      }
     }
-    renderBasket()
-    renderInfoField()
-    renderSumField()
-    renderDialogSumField()
-    showIndication()
-    getSum()
+  }
+  renderBasket();
+  renderSumField();
+  renderDialogSumField();
+  showBasketInfo();
+  getSum();
+}
+
+function deleteDialogBasket() {
+  for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
+    if (dishes[deleteIndex].amount > 0) {
+      dishes[deleteIndex].amount = 0;
+    }
+  }
+  renderBasket();
+  renderInfoField();
+  renderSumField();
+  renderDialogSumField();
+  showIndication();
+  getSum();
 }
 
 function renderSumField() {
@@ -137,7 +125,7 @@ function renderSumField() {
   }
 }
 
-function renderDialogSumField(){
+function renderDialogSumField() {
   let hiddenDialogSum = document.getElementById("dialog_content").innerHTML;
 
   if (hiddenDialogSum !== "") {
@@ -165,21 +153,21 @@ function closeDialog() {
   document.getElementById("body_overlay").classList.add("d_none");
 }
 
-function showIndication(){
+function showIndication() {
   document.getElementById("dialog_indication").classList.remove("d_none");
 }
-function hideIndication(){
+function hideIndication() {
   document.getElementById("dialog_indication").classList.add("d_none");
 }
 
-function hideDialogInfo(){
+function hideDialogInfo() {
   document.getElementById("dialog_info_container").classList.add("d_none");
 }
 
-function showBasketInfo(){
+function showBasketInfo() {
   document.getElementById("basket_order_info").classList.remove("d_none");
 }
 
-function hideBasketInfo(){
+function hideBasketInfo() {
   document.getElementById("basket_order_info").classList.add("d_none");
 }
