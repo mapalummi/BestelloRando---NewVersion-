@@ -14,21 +14,19 @@
     <script src="./scripts/db.js"></script>
     <script src="./script.js"></script>
   </head>
+
   <body onload="init()">
     <header>
       <h1>Best Fresh Burger In Town</h1>
     </header>
-
     <div id="main_container">
       <div id="content_container">
         <div class="img_container">
           <img src="./Assets/img/hamburger-1.jpg" alt="" />
         </div>
-
         <div class="logo_container">
           <a href="#"><img class="logo" src="./Assets/logo/Logo2.png" alt="" /></a>
         </div>
-
         <div class="name_container">
           <h3>Bestellorando</h3>
           <div class="review_container">
@@ -38,63 +36,48 @@
             <img src="./Assets/icons/icons8-stern.png" alt="" />
             <img src="./Assets/icons/icons8-stern.png" alt="" />
           </div>
-
           <p class="review_amount">(352 Bewertungen)</p>
         </div>
-
         <div class="nav_container">
           <a href="#render_dishes">Hauptgerichte</a>
           <a href="#render_side_dishes">Beilagen</a>
           <a href="#/">Soßen</a>
           <a href="#/">Desserts</a>
         </div>
-
         <div class="container3">
           <img src="./Assets/img/hamburger-2.jpg" alt="" />
         </div>
-
         <div class="container4">
           <h2>Hauptgerichte</h2>
         </div>
-
         <div id="render_dishes"></div>
-
         <div class="container3">
           <img src="./Assets/img/hamburger-6.jpg" alt="" />
         </div>
-
         <div class="container4">
           <h2>Beilagen</h2>
         </div>
-
         <div id="render_side_dishes"></div>
-
         <div class="button_container">
           <button onclick="showDialog()" class="button">WARENKORB</button>
         </div>
       </div>
-
       <div id="basket">
         <div class="basket_headline">
           <h2>Warenkorb</h2>
         </div>
-
         <div class="sticky_content">
           <div id="render_basket_order" class="basket_order_section"></div>
-
           <div id="sum_container" class="order_sum_container"></div>
-
           <div id="basket_order_info" class="basket_info d_none">
             <img src="./Assets/icons/icons8-korb.png" alt="" />
             <span>Deine Bestellung ist bei uns eingegangen und wird dir <br />schnellstmöglich geliefert!</span>
           </div>
-
           <div id="hidden_info_container" class="hidden_info">
             <span>Wähle leckere Gerichte aus und füge sie deinem Warenkorb hinzu</span>
           </div>
         </div>
       </div>
-
       <div id="body_overlay" class="overlay_style d_none">
         <div id="basket_dialog">
           <button onclick="closeDialog()" class="basket_button">WARENKORB VERLASSEN</button>
@@ -107,7 +90,6 @@
               <img src="./Assets/icons/icons8-korb.png" alt="" />
               <span>Wähle leckere Gerichte aus und füge sie deinem Warenkorb hinzu</span>
             </div>
-
             <div id="dialog_indication" class="d_none">
               <div class="checkbox_img"><img src="./Assets/icons/icons8-checkbox.png" alt="" /></div>
               <span class="indication_text">Deine Bestellung ist bei uns eingegangen <br />und wird dir schnellstmöglich geliefert!</span>
@@ -116,11 +98,11 @@
         </div>
       </div>
     </div>
-
     <footer>
       <span class="footer_link">
         Icon von <a target="_blank" href="https://icons8.com">Icons8</a>
       </span>
     </footer>
+    
   </body>
 </html>
