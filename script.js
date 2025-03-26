@@ -58,6 +58,8 @@ function addMenu(dishesIndex) {
   hideBasketInfo();
   hideIndication();
   getSum();
+
+  saveToLocalStorage()
 }
 
 function decreaseAmount(x) {
@@ -68,6 +70,8 @@ function decreaseAmount(x) {
 
   renderBasket();
   renderSumField();
+
+  saveToLocalStorage()
 }
 
 function increaseAmount(x) {
@@ -76,6 +80,8 @@ function increaseAmount(x) {
 
   renderBasket();
   renderSumField();
+
+  saveToLocalStorage()
 }
 
 function deleteFromBasket(x) {
@@ -86,6 +92,8 @@ function deleteFromBasket(x) {
   renderDialogSumField();
   renderInfoField();
   getSum();
+
+  saveToLocalStorage()
 }
 
 function deleteBasket() {
@@ -99,6 +107,8 @@ function deleteBasket() {
   renderDialogSumField();
   showBasketInfo();
   getSum();
+
+  saveToLocalStorage()
 }
 
 function deleteDialogBasket() {
@@ -113,6 +123,8 @@ function deleteDialogBasket() {
   renderDialogSumField();
   showIndication();
   getSum();
+
+  saveToLocalStorage()
 }
 
 function renderSumField() {
