@@ -408,7 +408,28 @@ footer a {
     padding: 0;
   }
 
+  .nav_container a {
+    font-size: 12px;
+  }
+
+  #dishes_box {
+    height: 120px;
+  }
+
+  .dishes_box_headline {
+    font-size: 18px;
+  }
+  
+  .dishes_box_menu {
+    font-size: 14px;
+  }
+  
+  .dishes_box_price {
+    font-size: 14px;
+  }
 }
+
+
 
 @font-face {
   font-family: "poppins";
