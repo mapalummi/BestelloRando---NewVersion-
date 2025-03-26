@@ -408,11 +408,19 @@ footer {
   height: 40px;
   background-color: rgb(36, 36, 36);
   color: white;
-  display: table-row;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 
-footer a {
+.footer_link{
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 12px;
+}
+
+.footer_link a {
   text-decoration: none;
   color: white;
 }

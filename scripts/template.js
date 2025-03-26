@@ -10,7 +10,7 @@ function getDishes(dishesIndex){
               <img onclick="addMenu(${[dishesIndex]})" class="basket_icon" src="./Assets/icons/icons8-warenkorb.png" alt="">
             </div>
           </div>
-    `;
+        `;
 }
 
 function getSideDishes(sideDishesindex){
@@ -23,7 +23,7 @@ return `<div id="dishes_box" onclick="addMenu()">
               <img class="basket_icon" src="./Assets/icons/icons8-warenkorb.png" alt="">
             </div>
           </div>
-    `;
+        `;
 }
 
 function getBasket(x){
@@ -71,7 +71,7 @@ function getSumField(sum){
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
             <span class="sum_row"><p>Gesamt:</p><p>${(sum += 2).toFixed(2)}€</p></span>
             <button onclick="deleteBasket()" class="basket_button2" role="button">Bestellen</button>
-            `;
+          `;
 }
 
 function getDialogSumField(sum){
@@ -79,5 +79,5 @@ function getDialogSumField(sum){
             <span class="sum_row"><p>Lieferkosten:</p><p>2,00 €</p></span>
             <span class="sum_row"><p>Gesamt:</p><p>${(sum += 2).toFixed(2)}€</p></span>
             <button onclick="deleteDialogBasket()" class="basket_button2" role="button">Bestellen</button>
-            `;
+          `;
 }
