@@ -93,6 +93,8 @@ function deleteFromBasket(x) {
   renderInfoField();
   getSum();
 
+  resetButtonText()
+
   saveToLocalStorage()
 }
 
@@ -107,6 +109,8 @@ function deleteBasket() {
   renderDialogSumField();
   showBasketInfo();
   getSum();
+
+  resetButtonText()
 
   saveToLocalStorage()
 }
@@ -163,6 +167,7 @@ function showDialog() {
 
 function closeDialog() {
   document.getElementById("body_overlay").classList.add("d_none");
+  document.getElementById("main_button").innerHTML = "WARENKORB";
 }
 
 function showIndication() {
@@ -182,4 +187,8 @@ function showBasketInfo() {
 
 function hideBasketInfo() {
   document.getElementById("basket_order_info").classList.add("d_none");
+}
+
+function resetButtonText(){
+  document.getElementById("main_button").innerHTML = "WARENKORB";
 }
