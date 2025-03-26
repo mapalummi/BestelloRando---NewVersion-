@@ -57,6 +57,9 @@ function addMenu(dishesIndex) {
   renderSumField()
   renderDialogSumField()
   renderInfoField()
+  hideDialogInfo()
+  hideBasketInfo()
+  hideIndication()
 }
 
 // Anzahl reduzieren:
@@ -98,7 +101,8 @@ for (let deleteIndex = 0; deleteIndex < dishes.length; deleteIndex++) {
 renderBasket()
 renderSumField()
 renderDialogSumField()
-renderInfoField()
+// renderInfoField()
+showBasketInfo()
 }
 
 
@@ -114,7 +118,8 @@ function deleteDialogBasket(){
     renderInfoField()
     renderSumField()
     renderDialogSumField()
-    closeDialog()
+    showIndication()
+    // closeDialog()
 }
 
 function renderSumField() {
@@ -149,9 +154,28 @@ function renderInfoField() {
 
 function showDialog() {
   document.getElementById("body_overlay").classList.remove("d_none");
-  document.getElementById("basket_overlay").classList.remove("d_none");
+  // document.getElementById("basket_overlay").classList.remove("d_none");
 }
 
 function closeDialog() {
   document.getElementById("body_overlay").classList.add("d_none");
+}
+
+function showIndication(){
+  document.getElementById("dialog_indication").classList.remove("d_none");
+}
+function hideIndication(){
+  document.getElementById("dialog_indication").classList.add("d_none");
+}
+
+function hideDialogInfo(){
+  document.getElementById("dialog_info_container").classList.add("d_none");
+}
+
+function showBasketInfo(){
+  document.getElementById("basket_order_info").classList.remove("d_none");
+}
+
+function hideBasketInfo(){
+  document.getElementById("basket_order_info").classList.add("d_none");
 }

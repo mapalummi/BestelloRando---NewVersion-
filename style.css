@@ -303,6 +303,20 @@ header h1 {
   text-align: center;
 }
 
+.basket_info{
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.basket_info img{
+  width: 80px;
+  height: 80px;
+}
+
 #body_overlay {
   position: fixed;
   top: 0;
@@ -364,6 +378,18 @@ align-items: center;
 
 .dialog_indication{
   height: 50%;
+}
+
+.dialog_info{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog_info img{
+  width: 100px;
+  height: 100px;
 }
 
 .checkbox_img{
