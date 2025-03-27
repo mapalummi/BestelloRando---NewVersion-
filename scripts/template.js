@@ -43,32 +43,6 @@ function getBasket(x) {
           `;
 }
 
-// NEU - weiter anpassen!!
-// function getSecondBasket(i) {
-//   return `<div id="basket_second_order_content${[i]}" class="basket_second_order">
-//                 <p class="dishes_box_headline">${sideDishes[i].name}</p>
-//               <div class="order_options">
-//                 <button onclick="decreaseAmount(${[i]})" class="minus_btn">
-//                   <img src="./Assets/icons/icons8-minus-weiß.png" alt="">
-//                 </button>
-//                 <p>${sideDishes[i].amount}</p>
-//                   <button onclick="increaseAmount(${[i]})" class="plus_btn">
-//                     <img src="./Assets/icons/icons8-plus-weiß.png" alt="">
-//                   </button>
-//                 <p>${sideDishes[i].newprice.toFixed(2)} €</p>
-//                   <button onclick="deleteFromBasket(${[i]})" class="delete_btn">
-//                     <img src="./Assets/icons/icons8-müll-white.png" alt="">
-//                   </button>
-//               </div>
-//             </div>
-//           `;
-// }
-
-
-
-
-
-
 function getDialogBasket(x) {
   return `<div id="basket_order_content${[x]}" class="basket_order">
               <p class="dishes_box_headline">${dishes[x].name}</p>
