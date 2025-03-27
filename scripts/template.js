@@ -19,9 +19,6 @@ function getSideDishes(sideDishesindex) {
               <p class="dishes_box_headline">${sideDishes[sideDishesindex].name}</p>
               <p class="dishes_box_price">${sideDishes[sideDishesindex].price.toFixed(2)} €</p>
             </div>
-            <div class="add_btn">
-              <img onclick="addSideMenu(${[sideDishesindex]})" class="basket_icon" src="./Assets/icons/icons8-warenkorb.png" alt="">
-            </div>
           </div>
         `;
 }
