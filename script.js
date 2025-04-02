@@ -1,7 +1,9 @@
 function init() {
+  getFromLocalStorage()
   renderInfoField();
   renderMainDishes();
   renderSideDishes();
+  renderBasket();
 }
 
 function renderMainDishes() {
@@ -184,3 +186,5 @@ function hideBasketInfo() {
 function resetButtonText() {
   document.getElementById("main_button").innerHTML = "WARENKORB";
 }
+
+init();
