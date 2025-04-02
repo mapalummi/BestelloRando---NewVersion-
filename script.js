@@ -1,9 +1,40 @@
 function init() {
-  getFromLocalStorage()
+  //Neu:
+  let dialogIndicationState = getStateFromLocalStorage("dialog_indication");
+  if (dialogIndicationState === "visible") {
+    showIndication();
+  } else {
+    hideIndication();
+  }
+
+  let dialogInfoState = getStateFromLocalStorage("dialog_info_container");
+  if (dialogInfoState === "hidden") {
+    hideDialogInfo();
+  }
+
+  let basketinfoState = getStateFromLocalStorage("basket_order_info");
+  if (basketinfoState === "visble") {
+    showBasketInfo();
+  } else {
+    hideBasketInfo();
+  }
+
+  let sumContainerState = getStateFromLocalStorage("sum_container");
+  if (sumContainerState === "visible") {
+    document.getElementById("sum_container").classList.remove("d_none");
+  } else {
+    document.getElementById("sum_container").classList.add("d_none");
+  }
+
+
+  getFromLocalStorage();
   renderInfoField();
   renderMainDishes();
   renderSideDishes();
   renderBasket();
+
+  hideBasketInfo()
+  hideIndication();
 }
 
 function renderMainDishes() {
@@ -130,8 +161,12 @@ function renderSumField() {
 
   if (hiddenSum !== "") {
     document.getElementById("sum_container").classList.remove("d_none");
+    //Hier noch neu eingefügt:
+    saveStateTolocalStorage("sum_container", "visible");
   } else {
     document.getElementById("sum_container").classList.add("d_none");
+    //Auch neu eingefügt:
+    saveStateTolocalStorage("sum_container", "hidden");
   }
 }
 
@@ -164,27 +199,32 @@ function closeDialog() {
   document.getElementById("main_button").innerHTML = "WARENKORB";
 }
 
+//Neu:
 function showIndication() {
   document.getElementById("dialog_indication").classList.remove("d_none");
+  saveStateTolocalStorage("dialog_indication", "visible");
 }
 function hideIndication() {
   document.getElementById("dialog_indication").classList.add("d_none");
+  saveStateTolocalStorage("dialog_indication", "hidden");
 }
 
+//Neu:
 function hideDialogInfo() {
   document.getElementById("dialog_info_container").classList.add("d_none");
+  saveStateTolocalStorage("dialog_info_container", "hidden");
 }
 
+//Neu:
 function showBasketInfo() {
   document.getElementById("basket_order_info").classList.remove("d_none");
+  saveStateTolocalStorage("basket_order_info", "visible");
 }
-
 function hideBasketInfo() {
   document.getElementById("basket_order_info").classList.add("d_none");
+  saveStateTolocalStorage("basket_order_info", "hidden");
 }
 
 function resetButtonText() {
   document.getElementById("main_button").innerHTML = "WARENKORB";
 }
-
-init();
