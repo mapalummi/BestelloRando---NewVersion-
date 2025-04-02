@@ -10,8 +10,6 @@ function saveToLocalStorage() {
     }
   }
 
-
-
   // Neue Funktionen:
   function saveStateTolocalStorage(key, value) {
     localStorage.setItem(key, value);

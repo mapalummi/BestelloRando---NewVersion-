@@ -26,14 +26,12 @@ function init() {
     document.getElementById("sum_container").classList.add("d_none");
   }
 
-
   getFromLocalStorage();
   renderInfoField();
   renderMainDishes();
   renderSideDishes();
   renderBasket();
-
-  hideBasketInfo()
+  hideBasketInfo();
   hideIndication();
 }
 
